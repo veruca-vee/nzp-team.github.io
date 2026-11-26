@@ -198,5 +198,9 @@ window.__botStates=[];
 window.__botLog=[];
 (function(){var _p=Module.print;Module.print=function(m){try{if(typeof m==='string'){if(m.indexOf('BOTSTATE')>=0){window.__botStates.push(m);if(window.__botStates.length>600)window.__botStates.shift();}window.__botLog.push(m);if(window.__botLog.length>300)window.__botLog.shift();}}catch(e){} _p(m);};})();
 </script>
+<div id="botlog" style="position:fixed;left:0;bottom:0;width:100%;max-height:45%;overflow:hidden;background:rgba(0,0,0,0.85);color:#9f9;font:11px monospace;white-space:pre-wrap;z-index:9999;padding:4px;"></div>
+<script type='text/javascript'>
+setInterval(function(){try{var el=document.getElementById('botlog');if(el&&window.__botLog){el.textContent=window.__botLog.slice(-25).join('\n');}}catch(e){}},700);
+</script>
 </body>
 </html>
